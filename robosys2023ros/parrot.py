@@ -22,10 +22,11 @@ class Parrot(Node):
 
     def publish_random_voice(self):
         voice = self.generate_random_parrot_voice()
-        msg = String()
-        msg.data = voice
-        self.publisher.publish(msg)
-        self.get_logger().info("Published: {}".format(msg.data))
+        if voice != 'None':
+            msg = String()
+            msg.data = voice
+            self.publisher.publish(msg)
+            self.get_logger().info("Published: {}".format(msg.data))
 
 def main():
     rclpy.init()
