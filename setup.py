@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'parrot = robosys2023ros.parrot:main'
         ],
     },
 )
