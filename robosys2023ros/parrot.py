@@ -16,7 +16,7 @@ class Parrot(Node):
 
     def generate_random_parrot_voice(self):
         pv = ['ki--', 'ki-ki-', 'kuwa--', 'kuwa-wa-wa-', None]
-        per = [0.05, 0.05, 0.05, 0.05, 0.8]
+        per = [0.01, 0.01, 0.01, 0.01, 0.96]
         result = random.choices(pv, per)[0]
         return str(result)
 

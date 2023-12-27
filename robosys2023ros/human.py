@@ -6,4 +6,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
+def cb(msg):
+    parrot_str = msg.data
+    print('parrot: ' + sub_str)
 
