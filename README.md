@@ -18,12 +18,12 @@ $ git clone git@github.com:Npaintrobo/robosys2023ros.git
 
 ## humanノードの使い方
 ```
-$ ros2 run robosys2023ros human.py
+$ ros2 run robosys2023ros human
 ```
 
 ## parrotノードの使い方
 ```
-$ ros2 run robosys2023ros parrot.py
+$ ros2 run robosys2023ros parrot
 ```
 
 ## テスト環境

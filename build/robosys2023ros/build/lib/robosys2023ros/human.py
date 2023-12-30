@@ -6,28 +6,31 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
-class Player2Node(Node):
+class Human(Node):
     def __init__(self):
-        super().__init__('player2')
-        self.publisher_ = self.create_publisher(String, 'player2', 10)
-        self.subscription_ = self.create_subscription(String, '/parrot_topic', self.callback, 10)
-        self.get_logger().info('You are player2. Enjoy chatting!!')
+        super().__init__('human')
+        self.publisher = self.create_publisher(String, '/human_topic', 10)
 
-    def callback(self, msg):
-        sub_str = msg.data
-        self.get_logger().info(f'player1: {sub_str}')
+    def publish_text(self, input_text):
+        msg = String()
+        msg.data = input_text
+        self.publisher.publish(msg)
+        self.get_logger().info(f'Published: {input_text}')
 
-    def run(self):
+def main():
+    rclpy.init()
+    node = Human()
+
+    try:
         while rclpy.ok():
-            pub_str = input('Your message: ')
-            msg = String()
-            msg.data = pub_str
-            self.publisher_.publish(msg)
+            user_input = input("Enter text to publish (or 'exit' to quit): ")
+            if user_input.lower() == 'exit':
+                break
+            node.publish_text(user_input)
+    except KeyboardInterrupt:
+        pass
 
-def main(args=None):
-    rclpy.init(args=args)
-    player2_node = Player2Node()
-    player2_node.run()
+    node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
