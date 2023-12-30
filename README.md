@@ -20,15 +20,17 @@ $ git clone git@github.com:Npaintrobo/robosys2023ros.git
 ```
 $ ros2 run robosys2023ros human
 human: aiueo
-[INFO] [1703962216.324115819] [human]: Published: aiueo
+[INFO] [1703967235.375534046] [human]: Published: aiueo
 human: kakikukeko
-[INFO] [1703962224.580401522] [human]: Published: kakikukeko
-human:
+[INFO] [1703967239.436444094] [human]: Published: kakikukeko
+human: 
 ```
 
 ## parrotノードの使い方
 ```
 $ ros2 run robosys2023ros parrot
+[INFO] [1703967235.374137790] [parrot]: Received: aiueo
+[INFO] [1703967239.436754204] [parrot]: Received: kakikukeko
 ```
 
 ## テスト環境
