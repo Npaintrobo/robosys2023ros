@@ -1,0 +1,4 @@
+[console_scripts]
+human = robosys2023ros.human:main
+parrot = robosys2023ros.parrot:main
+
