@@ -23,15 +23,15 @@ def main():
 
     try:
         while rclpy.ok():
-            user_input = input("Enter text to publish (or 'exit' to quit): ")
-            if user_input.lower() == 'exit':
-                break
+            user_input = input("human: ")
             node.publish_text(user_input)
+
     except KeyboardInterrupt:
         pass
 
-    node.destroy_node()
-    rclpy.shutdown()
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
