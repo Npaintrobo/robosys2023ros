@@ -8,7 +8,9 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-timeout 60 ros2 robosys2023ros  robosys2023ros parrot.py > /tmp/parrot.log
 
-cat /tmp/parrot.log |
-grep 'Published:'
+gnome-terminal -- bash -c "ros2 run robosys2023ros parrot; top"
+echo 'aiueo' | ros2 run robosys2023ros human
+
+#cat /tmp/robosys2023ros.log | grep 'aiueo'
+
