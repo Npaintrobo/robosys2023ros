@@ -11,22 +11,19 @@ import random
 class Parrot(Node):
     def __init__(self):
         super().__init__("parrot")
-        self.publisher = self.create_publisher(String, '/parrot_topic', 10)
-        self.timer = self.create_timer(1, self.publish_random_voice)
+        self.subscription = self.create_subscription(String, '/human_topic', self.callback, 10)
 
     def generate_random_parrot_voice(self):
         pv = ['ki--', 'ki-ki-', 'kuwa--', 'kuwa-wa-wa-', None]
         per = [0.04, 0.04, 0.04, 0.04, 0.84]
         result = random.choices(pv, per)[0]
         return str(result)
-
-    def publish_random_voice(self):
+        
+    def callback(self, msg):
         voice = self.generate_random_parrot_voice()
+        self.get_logger().info("Received: {}".format(msg.data))
         if voice != 'None':
-            msg = String()
-            msg.data = voice
-            self.publisher.publish(msg)
-            self.get_logger().info("Published: {}".format(msg.data))
+            self.get_logger().info("Received: {}".format(voice))
 
 def main():
     rclpy.init()
