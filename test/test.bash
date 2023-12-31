@@ -11,9 +11,8 @@ source $dir/.bashrc
 echo "aiueo" >> aiueo.txt
 
 
-gnome-terminal -- bash -c "script parrot.log & timeout 20 ros2 run robosys2023ros parrot;exit;"
-sleep 3
 gnome-terminal -- bash -c "
+sleep 3
 expect -c '
 spawn ros2 run robosys2023ros human
 expect \"human:\"
@@ -22,9 +21,12 @@ expect eof
 '
 "
 
-sleep 6
+timeout 10 ros2 run robosys2023ros parrot > parrot.log 2>&1
 
+echo abcd
 cat parrot.log
+
+
 
 
 

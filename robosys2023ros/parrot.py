@@ -29,7 +29,6 @@ def main():
     rclpy.init()
     parrot_node = Parrot()
     rclpy.spin(parrot_node)
-    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
