@@ -1,7 +1,6 @@
 # robosys2023ros
 
 [![test](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml/badge.svg)](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml)
-
 ## このパッケージについて
 このパッケージは、以下の２つのノードで構成されています
 * human.py
