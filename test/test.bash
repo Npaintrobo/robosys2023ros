@@ -23,8 +23,10 @@ expect eof
 
 timeout 10 ros2 run robosys2023ros parrot > parrot.log 2>&1
 
-echo abcd
-cat parrot.log
+echo test
+cat parrot.log|
+grep 'parrot'
+
 
 
 
