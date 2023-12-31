@@ -25,7 +25,7 @@ human:
 /human_topic 型:String
 
 ## Parrotノード
-このノードは,/human_topicをサブスクライブし標準出力します.また,低確率でparrotの鳴き声を標準出力します.
+このノードは,以下の例のように/human_topicをサブスクライブし標準出力します.また,低確率でparrotの鳴き声を標準出力します.
 ```
 $ ros2 run robosys2023ros parrot
 [INFO] [1703967235.374137790] [parrot]: Received: aiueo
