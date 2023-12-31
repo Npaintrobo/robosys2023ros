@@ -44,9 +44,6 @@ $ ros2 run robosys2023ros parrot
 * Ubuntu 22.04 LTS
 * ROS 2 Humble Hawksbil
 
-## 参考図書
-ＲＯＳ２とＰｙｔｈｏｎで作って学ぶＡＩロボット入門
-
 ## 著作権・ライセンス
 * このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 * © 2023 Shinnosuke Nonaka
