@@ -2,9 +2,7 @@
 [![test](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml/badge.svg)](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml)
 
 ## このパッケージについて
-このパッケージは、以下の２つのノードで構成されています
-* human.py
-* parrot.py
+このパッケージは、2023年ロボットシステム学課題2で作られたオウム返しをするパッケージです。
 
 ## 使用方法
 
@@ -26,7 +24,7 @@ human:
 パブリッシュするトピック
 /human_topic 型:String
 
-## parrotノード
+## Parrotノード
 このノードは,/human_topicをサブスクライブし標準出力します.また,低確率でparrotの鳴き声を標準出力します.
 ```
 $ ros2 run robosys2023ros parrot
