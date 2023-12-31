@@ -33,6 +33,9 @@ $ ros2 run robosys2023ros parrot
 ```
 サブスクライブするトピック
 /human_topic 型:String
+## 開発環境環境
+* Ubuntu 22.04 LTS
+* ROS 2 Humble Hawksbil
 
 ## テスト環境
 * Ubuntu 22.04 LTS
