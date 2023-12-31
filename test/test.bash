@@ -8,8 +8,6 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
-echo "aiueo" >> aiueo.txt
-
 
 gnome-terminal -- bash -c "
 sleep 3
