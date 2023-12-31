@@ -2,7 +2,7 @@
 [![test](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml/badge.svg)](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml)
 
 ## このパッケージについて
-* このパッケージは、2023年ロボットシステム学課題2で作成したオウム返しをするパッケージです。
+* このパッケージは、2023年ロボットシステム学課題2で作成したパッケージです。
 
 ## 使用方法
 
