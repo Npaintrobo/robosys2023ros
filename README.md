@@ -1,4 +1,4 @@
-# robosys2023ros
+# robosys2023 ROS 2
 [![test](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml/badge.svg)](https://github.com/Npaintrobo/robosys2023ros/actions/workflows/test.yml)
 
 ## このパッケージについて
