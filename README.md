@@ -6,7 +6,7 @@
 
 ## 使用方法
 
-このリポジトリーをROS 2ワークスペースのsrc下に下記のようにクローンしてください.
+このリポジトリーをクローンしてください.
 ```
 $ git clone git@github.com:Npaintrobo/robosys2023ros.git
 ```
