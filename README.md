@@ -22,7 +22,8 @@ human: kakikukeko
 human: 
 ```
 * パブリッシュするトピック
-  * /human_topic 型:String
+  * /human_topic
+    >型:String
 
 ## Parrotノード
 * このノードは,以下の例のように/human_topicをサブスクライブし標準出力します.また,低確率でparrotの鳴き声を標準出力します.
@@ -32,7 +33,8 @@ $ ros2 run robosys2023ros parrot
 [INFO] [1703967239.436754204] [parrot]: Received: kakikukeko
 ```
 * サブスクライブするトピック
-  * /human_topic 型:String
+  * /human_topic
+    型:String
 ## 開発環境
 * Ubuntu 22.04 LTS
 * ROS 2 Humble Hawksbil
