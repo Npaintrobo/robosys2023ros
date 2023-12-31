@@ -5,20 +5,20 @@
 ## このパッケージについて
 このパッケージは、以下の２つのノードで構成されています
 * human.py
-	* 標準入力から単語を受け取りそれをトピック/human_topicを通じて、String型でパブリッシュします。
+	* 標準入力から単語を受け取りそれをトピック/human_topicを通じて, String型でパブリッシュします
 
 * parrot.py
-	* サブスクライブしたものを標準出力します。また、低い確率で鳴き声を出します。
+	* サブスクライブしたものを標準出力します.また, 低い確率で鳴き声を出します.
 
 
-## インストール方法
+## 使用方法
 
-このリポジトリーを下記のようにクローンしてください.
+このリポジトリーをROS2ワークスペースのsrc下に下記のようにクローンしてください.
 ```
 $ git clone git@github.com:Npaintrobo/robosys2023ros.git
 ```
 
-## humanノードの使い方
+## humanノード
 ```
 $ ros2 run robosys2023ros human
 human: aiueo
@@ -28,7 +28,7 @@ human: kakikukeko
 human: 
 ```
 
-## parrotノードの使い方
+## parrotノード
 ```
 $ ros2 run robosys2023ros parrot
 [INFO] [1703967235.374137790] [parrot]: Received: aiueo
