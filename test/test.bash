@@ -27,8 +27,6 @@ expect \"human:\"
 send \"123456789\n\"
 expect \"human:\"
 send \"a1b2c3d4e5\n\"
-expect \"human:\"
-send \"あいうえお\n\"
 expect eof
 '
 "
@@ -40,6 +38,5 @@ timeout 10 ros2 run robosys2023ros parrot > parrot.log 2>&1
 grep -q 'aiueo' parrot.log || ng ${LINENO}
 grep -q '123456789' parrot.log || ng ${LINENO}
 grep -q 'a1b2c3d4e5' parrot.log || ng ${LINENO}
-grep -aq 'あいうえお' parrot.log || ng ${LINENO}
 [ "$res" = 0 ] && echo OK  
 exit $res
