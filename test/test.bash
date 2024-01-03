@@ -17,8 +17,7 @@ ng () {
 res=0
 
 #Human-node
-/usr/bin/gnome-terminal  -- bash -c "
-sleep 4
+{
 expect -c '
 spawn ros2 run robosys2023ros human
 expect \"human:\"
@@ -29,14 +28,16 @@ expect \"human:\"
 send \"a1b2c3d4e5\n\"
 expect eof
 '
-"
+}&
+
 
 #Parrot-node
-timeout 10 ros2 run robosys2023ros parrot > parrot.log 2>&1
+timeout 60 ros2 run robosys2023ros parrot > parrot.log 2>&1
 
 #parrot-log
 grep -q 'aiueo' parrot.log || ng ${LINENO}
 grep -q '123456789' parrot.log || ng ${LINENO}
 grep -q 'a1b2c3d4e5' parrot.log || ng ${LINENO}
+echo ""
 [ "$res" = 0 ] && echo OK  
 exit $res
