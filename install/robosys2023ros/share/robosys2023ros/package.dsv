@@ -1,6 +1,0 @@
-source;share/robosys2023ros/hook/pythonpath.ps1
-source;share/robosys2023ros/hook/pythonpath.dsv
-source;share/robosys2023ros/hook/pythonpath.sh
-source;share/robosys2023ros/hook/ament_prefix_path.ps1
-source;share/robosys2023ros/hook/ament_prefix_path.dsv
-source;share/robosys2023ros/hook/ament_prefix_path.sh
