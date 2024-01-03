@@ -18,7 +18,7 @@ res=0
 
 #Human-node
 gnome-terminal -- bash -c "
-sleep 4
+sleep 2
 expect -c '
 spawn ros2 run robosys2023ros human
 expect \"human:\"
@@ -32,7 +32,7 @@ expect eof
 "
 
 #Parrot-node
-timeout 10 ros2 run robosys2023ros parrot > parrot.log 2>&1
+timeout 15 ros2 run robosys2023ros parrot > parrot.log 2>&1
 
 #parrot-log
 grep -q 'aiueo' parrot.log || ng ${LINENO}
