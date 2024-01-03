@@ -17,7 +17,7 @@ ng () {
 res=0
 
 #Human-node
-gnome-terminal -- bash -c "
+/usr/bin/gnome-terminal  -- bash -c "
 sleep 4
 expect -c '
 spawn ros2 run robosys2023ros human
