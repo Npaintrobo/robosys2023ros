@@ -1,5 +1,5 @@
 #!/bin/bash
-# SPDX-FileCopyrightText: 2023 Shinnosuke Nonaka 
+# SPDX-FileCopyrightText: 2023 Shinnosuke Nonaka
 # SPDX-License-Identifier: BSD-3-Clause
 
 dir=~
@@ -9,35 +9,27 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
-ng () {
-      echo NG at Line $1
-      res=1
+ng() {
+    echo "NG at Line $1"
+    res=1
 }
 
 res=0
 
-#Human-node
+# Human-node
 {
-expect -c '
-spawn ros2 run robosys2023ros human
-expect \"human:\"
-send \"aiueo\n\"
-expect \"human:\"
-send \"123456789\n\"
-expect \"human:\"
-send \"a1b2c3d4e5\n\"
-expect eof
-'
-}&
+ (sleep 2 && echo "aiueo" && sleep 1 && echo "123456789" && sleep 1 && echo "a1b2c3d4e5") | timeout 10 ros2 run robosys2023ros human
+} &
 
+# Parrot-node
+timeout 20 ros2 run robosys2023ros parrot > parrot.log 2>&1
 
-#Parrot-node
-timeout 60 ros2 run robosys2023ros parrot > parrot.log 2>&1
-
-#parrot-log
+# Parrot-log
 grep -q 'aiueo' parrot.log || ng ${LINENO}
 grep -q '123456789' parrot.log || ng ${LINENO}
 grep -q 'a1b2c3d4e5' parrot.log || ng ${LINENO}
+
 echo ""
-[ "$res" = 0 ] && echo OK  
+[ "$res" = 0 ] && echo "OK"
 exit $res
+

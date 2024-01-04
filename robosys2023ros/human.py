@@ -23,7 +23,11 @@ def main():
 
     try:
         while rclpy.ok():
-            user_input = input("human: ")
+            try:
+                user_input = input("human: ")
+            except EOFError:
+                break  # Exit the loop on EOFError
+
             node.publish_text(user_input)
 
     except KeyboardInterrupt:
