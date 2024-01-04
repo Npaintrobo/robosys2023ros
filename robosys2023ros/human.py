@@ -28,9 +28,7 @@ def main():
                 if user_input.strip():
                     node.publish_text(user_input)
             except EOFError:
-                break  
-
-            node.publish_text(user_input)
+                break 
 
     except KeyboardInterrupt:
         pass
