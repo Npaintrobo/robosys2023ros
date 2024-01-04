@@ -27,12 +27,14 @@ touch test.log
 
 sleep 20
 
+cat test.log
+
 # Parrot-log
 cat test.log | grep 'aiueo' || ng ${LINENO}
 cat test.log | grep '123456789' || ng ${LINENO}
 cat test.log | grep 'a1b2c3d4e5' || ng ${LINENO}
 
-rm test.bash
+rm test.log
 echo ""
 [ "$res" = 0 ] && echo "OK"
 exit $res
