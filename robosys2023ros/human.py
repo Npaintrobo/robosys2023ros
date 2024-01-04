@@ -25,8 +25,10 @@ def main():
         while rclpy.ok():
             try:
                 user_input = input("human: ")
+                if not user_input:
+                    continue 
             except EOFError:
-                break  # Exit the loop on EOFError
+                break  
 
             node.publish_text(user_input)
 
