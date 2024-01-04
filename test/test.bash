@@ -5,9 +5,9 @@
 dir=~
 [ "$1" != "" ] && dir="$1"
 
-cd $dir/ros2_ws
+cd "$dir/ros2_ws"
 colcon build
-source $dir/.bashrc
+source "$dir/.bashrc"
 
 ng() {
     echo "NG at Line $1"
@@ -16,10 +16,11 @@ ng() {
 
 res=0
 
-touch test.log
+parrot_log=$(mktemp)
 
 # Parrot-node
-(ros2 run robosys2023ros parrot > test.log 2>&1)&
+(ros2 run robosys2023ros parrot > "$parrot_log" 2>&1)&
+
 # Human-node
 {
  (sleep 4 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
@@ -27,12 +28,13 @@ touch test.log
 
 sleep 20
 
-# Parrot-log
-cat test.log | grep 'aiueo' || ng ${LINENO}
-cat test.log | grep '123456789' || ng ${LINENO}
-cat test.log | grep 'a1b2c3d4e5' || ng ${LINENO}
+# Check Parrot-log
+cat "$parrot_log" | grep 'aiueo' || ng ${LINENO}
+cat "$parrot_log" | grep '123456789' || ng ${LINENO}
+cat "$parrot_log" | grep 'a1b2c3d4e5' || ng ${LINENO}
 
-rm test.log
+rm "$parrot_log"
+
 echo ""
 [ "$res" = 0 ] && echo "OK"
 exit $res
