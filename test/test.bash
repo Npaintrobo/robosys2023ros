@@ -17,7 +17,7 @@ ng() {
 res=0
 
 # Parrot-node
-(ros2 run robosys2023ros parrot > /tmp/mypkg.log 2>&1)&
+(ros2 run robosys2023ros parrot > /tmp/mypkg.log)&
 # Human-node
 {
  (sleep 4 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
