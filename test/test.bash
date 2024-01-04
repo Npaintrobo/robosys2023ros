@@ -22,12 +22,12 @@ res=0
 } &
 
 # Parrot-node
-timeout 20 ros2 run robosys2023ros parrot > parrot.log 2>&1
+timeout 20 ros2 run robosys2023ros parrot > /tmp/robosys22023ros.log
 
 # Parrot-log
-grep -q 'aiueo' parrot.log || ng ${LINENO}
-grep -q '123456789' parrot.log || ng ${LINENO}
-grep -q 'a1b2c3d4e5' parrot.log || ng ${LINENO}
+grep -q 'aiueo' /tmp/robosys22023ros.log || ng ${LINENO}
+grep -q '123456789' /tmp/robosys22023ros.log || ng ${LINENO}
+grep -q 'a1b2c3d4e5' /tmp/robosys22023ros.log || ng ${LINENO}
 
 echo ""
 [ "$res" = 0 ] && echo "OK"
