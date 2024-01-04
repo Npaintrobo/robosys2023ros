@@ -28,6 +28,10 @@ parrot_log=$(mktemp)
 
 sleep 20
 
+echo "Parrot Log Content:"
+cat "$parrot_log"
+
+
 # Check Parrot-log
 cat "$parrot_log" | grep 'aiueo' || ng ${LINENO}
 cat "$parrot_log" | grep '123456789' || ng ${LINENO}
