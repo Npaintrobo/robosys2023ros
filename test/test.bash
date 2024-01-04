@@ -19,7 +19,7 @@ res=0
 touch test.log
 
 # Parrot-node
-(ros2 run robosys2023ros parrot > test.log)&
+(ros2 run robosys2023ros parrot > test.log 2&1)&
 # Human-node
 {
  (echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
