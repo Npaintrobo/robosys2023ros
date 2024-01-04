@@ -16,10 +16,10 @@ ng() {
 
 res=0
 
-touch test.log
+touch /tmp/test.log
 
 # Parrot-node
-(ros2 run robosys2023ros parrot > test.log 2>&1)&
+(ros2 run robosys2023ros parrot > /tmp/test.log 2>&1)&
 # Human-node
 {
  (sleep 4 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
@@ -27,12 +27,12 @@ touch test.log
 
 sleep 20
 
-cat test.log
+cat /tmp/test.log
 
 # Parrot-log
-cat test.log | grep 'aiueo' || ng ${LINENO}
-cat test.log | grep '123456789' || ng ${LINENO}
-cat test.log | grep 'a1b2c3d4e5' || ng ${LINENO}
+cat /tmp/test.log | grep 'aiueo' || ng ${LINENO}
+cat /tmp/test.log | grep '123456789' || ng ${LINENO}
+cat /tmp/test.log | grep 'a1b2c3d4e5' || ng ${LINENO}
 
 rm test.log
 echo ""
