@@ -22,7 +22,7 @@ touch test.log
 (ros2 run robosys2023ros parrot > test.log 2>&1)&
 # Human-node
 {
- (echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
+ (sleep 4 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
 }
 
 sleep 20
@@ -32,7 +32,7 @@ cat test.log | grep 'aiueo' || ng ${LINENO}
 cat test.log | grep '123456789' || ng ${LINENO}
 cat test.log | grep 'a1b2c3d4e5' || ng ${LINENO}
 
-rm test.log
+rm test.bash
 echo ""
 [ "$res" = 0 ] && echo "OK"
 exit $res
