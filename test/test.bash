@@ -18,10 +18,10 @@ res=0
 
 # Human-node
 {
- (sleep 4 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
+ (sleep 10 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
 }&
 # Parrot-node
-(ros2 run robosys2023ros parrot > /tmp/mypkg.log)&
+(sleep 5; ros2 run robosys2023ros parrot > /tmp/mypkg.log)&
 {
  sleep 20
  # Parrot-log
