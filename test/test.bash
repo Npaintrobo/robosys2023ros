@@ -21,13 +21,13 @@ res=0
  (sleep 10 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
 }&
 # Parrot-node
-(sleep 5; ros2 run robosys2023ros parrot > /tmp/mypkg.log 2>&1)&
+(sleep 5; ros2 run robosys2023ros parrot > /tmp/parrot.log 2>&1)&
 {
  sleep 20
  # Parrot-log
- (cat /tmp/mypkg.log | grep -a 'aiueo' || ng ${LINENO})
- (cat /tmp/mypkg.log | grep -a '123456789' || ng ${LINENO})
- (cat /tmp/mypkg.log | grep -a 'a1b2c3d4e5' || ng ${LINENO})
+ (cat /tmp/parrot.log | grep -a 'aiueo' || ng ${LINENO})
+ (cat /tmp/parrot.log | grep -a '123456789' || ng ${LINENO})
+ (cat /tmp/parrot.log | grep -a 'a1b2c3d4e5' || ng ${LINENO})
 }
 echo ""
 
