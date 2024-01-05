@@ -25,9 +25,9 @@ res=0
 {
  sleep 20
  # Parrot-log
- cat /tmp/mypkg.log | grep 'aiueo' || ng ${LINENO}
- cat /tmp/mypkg.log | grep '123456789' || ng ${LINENO}
- cat /tmp/mypkg.log | grep 'a1b2c3d4e5' || ng ${LINENO}
+ (cat /tmp/mypkg.log | grep 'aiueo' || ng ${LINENO})
+ (cat /tmp/mypkg.log | grep '123456789' || ng ${LINENO})
+ (cat /tmp/mypkg.log | grep 'a1b2c3d4e5' || ng ${LINENO})
 }
 echo ""
 [ "$res" = 0 ] && echo "OK"
