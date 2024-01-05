@@ -16,20 +16,19 @@ ng() {
 
 res=0
 
-# Parrot-node
-(ros2 run robosys2023ros parrot > /tmp/mypkg.log)&
 # Human-node
 {
  (sleep 4 ; echo "aiueo"; sleep 1; echo "123456789"; sleep 1; echo "a1b2c3d4e5") |  ros2 run robosys2023ros human
+}&
+# Parrot-node
+(ros2 run robosys2023ros parrot > /tmp/mypkg.log)&
+{
+ sleep 20
+ # Parrot-log
+ cat /tmp/mypkg.log | grep 'aiueo' || ng ${LINENO}
+ cat /tmp/mypkg.log | grep '123456789' || ng ${LINENO}
+ cat /tmp/mypkg.log | grep 'a1b2c3d4e5' || ng ${LINENO}
 }
-
-sleep 20
-
-# Parrot-log
-cat /tmp/mypkg.log | grep 'aiueo' || ng ${LINENO}
-cat /tmp/mypkg.log | grep '123456789' || ng ${LINENO}
-cat /tmp/mypkg.log | grep 'a1b2c3d4e5' || ng ${LINENO}
-
 echo ""
 [ "$res" = 0 ] && echo "OK"
 exit $res
