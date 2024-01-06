@@ -8,7 +8,7 @@
 
 このリポジトリーをROS 2 ワークスペースのsrc下にクローンしてください.
 ```
-$ git clone git@github.com:Npaintrobo/robosys2023ros.git
+$ https://github.com/Npaintrobo/robosys2023ros.git
 ```
 
 ## Humanノード
