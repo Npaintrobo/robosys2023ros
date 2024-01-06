@@ -24,6 +24,7 @@ res=0
 (sleep 5; ros2 run robosys2023ros parrot > /tmp/parrot.log 2>&1)&
 {
  sleep 20
+ echo ""
  # Parrot-log
  (cat /tmp/parrot.log | grep -a 'aiueo' || ng ${LINENO})
  (cat /tmp/parrot.log | grep -a '123456789' || ng ${LINENO})
