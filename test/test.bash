@@ -32,6 +32,8 @@ res=0
 }
 echo ""
 
+sleep 10
+
 [ "$res" = 0 ] && echo "OK"
 exit $res
 
